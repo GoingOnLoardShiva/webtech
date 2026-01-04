@@ -7,7 +7,7 @@ const siteMetadata = {
     "WebNews is a free learning blog for web developers and software engineers. Learn HTML, CSS, JavaScript, React, Next.js, MongoDB, APIs, backend development, and modern coding practices.",
   language: "en-us",
   theme: "system", // system, dark or light
-  siteUrl: "https://create-blog-with-nextjs.vercel.app", // your website URL
+  siteUrl: "https://webnews-psi.vercel.app/", // your website URL
   siteLogo: "/logo.png",
   // socialBanner: "/social-banner.png",
   keywords: [
