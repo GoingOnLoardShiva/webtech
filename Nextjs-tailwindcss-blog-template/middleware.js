@@ -11,7 +11,7 @@ export async function middleware(req) {
   // Only apply to /admin paths
   if (pathname.startsWith('/admin')) {
     // Allow login page and public assets
-    if (pathname === '/admin/login' || pathname.startsWith('/admin/login')) {
+    if (pathname === '/login' || pathname.startsWith('/login')) {
       return NextResponse.next();
     }
 
@@ -21,13 +21,13 @@ export async function middleware(req) {
     } catch (err) {
       // token decryption failed (invalid cookie), redirect to login to clear bad cookie
       console.warn('getToken error:', err?.message || err);
-      const loginUrl = new URL('/admin/login', req.url);
+      const loginUrl = new URL('/login', req.url);
       loginUrl.searchParams.set('callbackUrl', req.url);
       return NextResponse.redirect(loginUrl);
     }
 
     if (!token) {
-      const loginUrl = new URL('/admin/login', req.url);
+      const loginUrl = new URL('/login', req.url);
       loginUrl.searchParams.set('callbackUrl', req.url);
       return NextResponse.redirect(loginUrl);
     }
