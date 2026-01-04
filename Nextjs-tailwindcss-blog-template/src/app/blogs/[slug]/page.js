@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   await dbConnect();
   const post = await Post.findOne({ slug, isPublished: true }).lean();
   if (!post) return;
@@ -92,7 +92,7 @@ function TableOfContentsItem({ item, level = "two" }){
 }
 
 export default async function BlogPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   await dbConnect();
   const post = await Post.findOne({ slug, isPublished: true }).lean();
   if (!post) return notFound();

@@ -16,7 +16,12 @@ function mapPostToBlog(p) {
       ? typeof p.image === "string"
         ? { src: p.image, width: 1200, height: 630, blurDataURL: "" }
         : p.image
-      : { src: "/default-banner.jpg", width: 1200, height: 630, blurDataURL: "" },
+      : {
+          src: "/default-banner.jpg",
+          width: 1200,
+          height: 630,
+          blurDataURL: "",
+        },
     description: p.description || p.excerpt || "",
     tags: p.tags || ["uncategorized"],
     publishedAt: new Date(p.publishedAt || p.createdAt).toISOString(),
@@ -26,15 +31,19 @@ function mapPostToBlog(p) {
 }
 
 export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
   return {
-    title: `${params.slug.replaceAll("-", " ")} Blogs`,
+    title: `${slug.replaceAll("-", " ")} Blogs`,
     description: `Learn more about ${
-      params.slug === "all" ? "web development" : params.slug
+      slug === "all" ? "web development" : slug
     } through our collection of expert blogs and tutorials`,
   };
 }
 
 const CategoryPage = async ({ params }) => {
+  const { slug: categorySlug } = await params;
+
   await dbConnect();
 
   const allPosts = await Post.find({ isPublished: true }).lean();
@@ -51,9 +60,9 @@ const CategoryPage = async ({ params }) => {
 
   const blogs = allPosts
     .filter((p) =>
-      params.slug === "all"
+      categorySlug === "all"
         ? true
-        : (p.tags || []).some((t) => slug(t) === params.slug)
+        : (p.tags || []).some((t) => slug(t) === categorySlug)
     )
     .map(mapPostToBlog);
 
@@ -61,14 +70,14 @@ const CategoryPage = async ({ params }) => {
     <article className="mt-12 flex flex-col text-dark dark:text-light">
       <div className="px-5 sm:px-10 md:px-24 sxl:px-32">
         <h1 className="mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl">
-          #{params.slug}
+          #{categorySlug}
         </h1>
         <span className="mt-2 inline-block">
           Discover more categories and expand your knowledge!
         </span>
       </div>
 
-      <Categories categories={allCategories} currentSlug={params.slug} />
+      <Categories categories={allCategories} currentSlug={categorySlug} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-10 px-5 sm:px-10 md:px-24 sxl:px-32">
         {blogs.map((blog, index) => (
