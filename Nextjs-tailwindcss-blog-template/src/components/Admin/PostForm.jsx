@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import imageCompression from "browser-image-compression";
 import MDXAdvancedEditor from "./MDXAdvancedEditor";
 
-export default function PostForm({ initial = {}, isEdit = false }) {
+export default function PostForm({ initial = null, isEdit = false }) {
   const router = useRouter();
 
   // --- State ---
