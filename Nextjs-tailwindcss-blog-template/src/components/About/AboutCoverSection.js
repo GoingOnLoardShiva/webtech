@@ -18,7 +18,7 @@ const AboutCoverSection = () => {
             Dream Big, Work Hard, Achieve More!
             </h2>
             <p className='font-medium capitalize mt-4 text-base'>
-            This Mantra Drives My Work As A Passionate Freelancer. I Blend Innovative Technology With Timeless Design For Captivating Digital Experiences. Inspired By Nature And Literature, I'm A Perpetual Learner Embracing Challenges. With Each Project, I Aim To Leave A Lasting Impact—One Pixel At A Time.
+              I am a passionate web developer dedicated to crafting beautiful and functional digital experiences. With a strong foundation in both frontend and backend technologies, I specialize in building responsive, user-friendly websites and applications that not only look great but also perform seamlessly across all devices. My goal is to turn ideas into reality through clean code, innovative design, and a commitment to excellence.
             </p>
         </div>
     </section>
