@@ -10,7 +10,8 @@
     "lint": "next lint",
     "content": "velite --clean",
     "seed": "node scripts/seedAdmin.js",
-    "import:mdx": "node scripts/importMdx.js"
+    "import:mdx": "node scripts/importMdx.js",
+    "test:slug": "node scripts/slug-regression-check.js"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.12.0",

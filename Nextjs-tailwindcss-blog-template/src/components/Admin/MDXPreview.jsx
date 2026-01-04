@@ -3,12 +3,23 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { slug as slugify } from 'github-slugger'
 import CodeBlock from '@/src/components/Blog/CodeBlock'
-import Image from 'next/image'
 
 export default function MDXPreview({ value }) {
+  // use the same slug helper as generateTOC
+  const getSlug = (text) => String(text || '') ? slugify(String(text || '')).toLowerCase() : ''
+
+  // recursively extract text from React children/nodes
+  const getText = (node) => {
+    if (node == null) return ''
+    if (typeof node === 'string' || typeof node === 'number') return String(node)
+    if (Array.isArray(node)) return node.map(getText).join('')
+    if (node && node.props && node.props.children) return getText(node.props.children)
+    return ''
+  }
+
   const heading = (level) => ({node, children, ...rest}) => {
-    const text = Array.isArray(children) ? children.map(String).join('') : String(children || '')
-    const id = slugify(text).toLowerCase()
+    const text = getText(children)
+    const id = getSlug(text)
     const Tag = `h${level}`
     return (
       <Tag id={id} className="scroll-mt-20" {...rest}>
@@ -24,7 +35,8 @@ export default function MDXPreview({ value }) {
     h3: heading(3),
     h4: heading(4),
     code: CodeBlock,
-    img: ({src, alt, ...rest}) => <Image src={src} alt={alt || ''} width={1200} height={630} {...rest} />,
+    // use a simple <img> for admin preview to avoid next/image constraints
+    img: ({src, alt, ...rest}) => <img src={src} alt={alt || ''} {...rest} className="max-w-full rounded" />,
   }
 
   return (
