@@ -56,6 +56,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="bIAcXNOt6yIh3QD-kye1XlO0LAt81zxtUjZH2VKdFNY" />
+
+      </head>
       <body
         className={cx(
           inter.variable,
