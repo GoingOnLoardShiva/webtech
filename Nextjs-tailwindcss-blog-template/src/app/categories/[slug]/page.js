@@ -17,7 +17,7 @@ function mapPostToBlog(p) {
         ? { src: p.image, width: 1200, height: 630, blurDataURL: "" }
         : p.image
       : {
-          src: "/default-banner.jpg",
+          src: "/profile-img.png",
           width: 1200,
           height: 630,
           blurDataURL: "",
