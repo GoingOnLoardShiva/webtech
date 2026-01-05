@@ -10,6 +10,7 @@ import dbConnect from '@/src/lib/mongoose';
 import Post from '@/src/models/Post';
 import readingTime from 'reading-time';
 import { generateTOC } from '@/src/utils/markdown';
+import AdBanner from "@/src/components/AdBanner";
 
 export async function generateStaticParams() {
   await dbConnect();
@@ -189,6 +190,7 @@ export default async function BlogPage({ params }) {
         </div>
         <RenderMdx blog={blog} />
       </div>
+      <AdBanner/>
     </article>
     </>
   );
