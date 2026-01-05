@@ -1,9 +1,5 @@
-# *
 User-agent: *
-Allow: /
+Disallow: /admin
+Disallow: /login
 
-# Host
-Host: https://webnews-psi.vercel.app/
-
-# Sitemaps
 Sitemap: https://webnews-psi.vercel.app/sitemap.xml
