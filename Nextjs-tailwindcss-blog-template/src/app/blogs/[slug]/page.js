@@ -188,6 +188,7 @@ export default async function BlogPage({ params }) {
             </div>
           </details>
         </div>
+        <AdBanner/>
         <RenderMdx blog={blog} />
       </div>
       <AdBanner/>

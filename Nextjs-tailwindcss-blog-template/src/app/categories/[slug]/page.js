@@ -4,6 +4,7 @@ import { slug } from "github-slugger";
 import dbConnect from "@/src/lib/mongoose";
 import Post from "@/src/models/Post";
 import readingTime from "reading-time";
+import AdBanner from "@/src/components/AdBanner";
 
 export const revalidate = 60; // ✅ ISR (recommended)
 
@@ -78,6 +79,7 @@ const CategoryPage = async ({ params }) => {
       </div>
 
       <Categories categories={allCategories} currentSlug={categorySlug} />
+      <AdBanner/>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-10 px-5 sm:px-10 md:px-24 sxl:px-32">
         {blogs.map((blog, index) => (

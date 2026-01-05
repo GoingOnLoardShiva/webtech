@@ -2,6 +2,7 @@ import { sortBlogs } from "@/src/utils";
 import Link from "next/link";
 import React from "react";
 import BlogLayoutThree from "../Blog/BlogLayoutThree";
+import AdBanner from "../AdBanner";
 
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
@@ -19,6 +20,7 @@ const RecentPosts = ({ blogs }) => {
           view all
         </Link>
       </div>
+      <AdBanner/>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-16">
         {sortedBlogs.slice(4, 10).map((blog, index) => {
