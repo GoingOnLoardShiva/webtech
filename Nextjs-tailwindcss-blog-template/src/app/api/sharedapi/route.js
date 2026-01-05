@@ -10,7 +10,7 @@ export async function POST(req) {
         const body = await req.json();
         const { blog_user_secret_key } = body;
         if (!blog_user_secret_key) return NextResponse.json({ error: 'Missing secret key' }, { status: 400 });
-        const secretKey = process.env.BLOG_USER_SECRET_KEY
+        const secretKey = "ren_555_snjj_A08"
         //compare the secret key with env secret key//
         if(blog_user_secret_key !== secretKey){
             return NextResponse.json({ error: 'Invalid secret key' }, { status: 401 });
