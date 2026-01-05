@@ -158,7 +158,7 @@ export default function MDXAdvancedEditor({
 
   return (
     <div
-      className={`flex flex-col lg:flex-row gap-4 w-full h-full ${
+      className={`flex flex-col lg:flex-col gap-4 w-full h-full ${
         isFull ? "fixed inset-0 z-[999] bg-white p-4" : "p-2"
       }`}
     >

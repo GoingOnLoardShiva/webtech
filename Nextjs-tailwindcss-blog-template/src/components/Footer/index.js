@@ -106,8 +106,8 @@ const Footer = () => {
         </Link>
         <span>
           Made with &hearts; by{" "}
-          <a href="https://devdreaming.com" className="underline" target="_blank">
-            CodeBucks
+          <a href="https://hirenray.vercel.app/" className="underline" target="_blank">
+            Ray Web App Development
           </a>
         </span>
       </div>

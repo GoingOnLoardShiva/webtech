@@ -40,7 +40,7 @@ export default function MDXPreview({ value }) {
   }
 
   return (
-    <div className="prose max-w-none p-4 border rounded bg-white">
+    <div className="prose max-w-none   rounded bg-white">
       <ReactMarkdown components={components}>{value || ''}</ReactMarkdown>
     </div>
   );

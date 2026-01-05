@@ -121,7 +121,7 @@ export default function PostForm({ initial = null, isEdit = false }) {
 
   return (
     <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
         {/* LEFT: Form + Editor */}
         <div className="lg:col-span-8 space-y-6">
           {/* Post Meta */}
