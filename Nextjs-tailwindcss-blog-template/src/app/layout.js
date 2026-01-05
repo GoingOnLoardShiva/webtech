@@ -101,7 +101,8 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
-
+        <script async="async" data-cfasync="false" src="https://pl28407725.effectivegatecpm.com/1ac2e82cee1612d6a34d01b4b05400c2/invoke.js"></script>
+        <div id="container-1ac2e82cee1612d6a34d01b4b05400c2"></div>
         <Header />
         {children}
         <Footer />
