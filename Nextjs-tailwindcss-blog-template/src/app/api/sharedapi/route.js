@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import ConnectDb from "@/src/lib/mongoose";
 import Post from "@/src/models/Post";
 
+
+
 export async function GET(req) {
   try {
     const apiKey = req.headers.get("x-api-key");
@@ -18,7 +20,7 @@ export async function GET(req) {
 
     await ConnectDb();
 
-    const post = await Post.findOne()
+    const post = await Post.find()
       .sort({ createdAt: -1 })
       .select("title slug content createdAt author image");
 
