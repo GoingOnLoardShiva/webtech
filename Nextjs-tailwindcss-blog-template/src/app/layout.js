@@ -2,8 +2,8 @@ import "./globals.css";
 import { cx } from "@/src/utils";
 import { Inter, Manrope } from "next/font/google";
 import Header from "@/src/components/Header";
-import Footer from "../components/Footer";
-import siteMetadata from "../utils/siteMetaData";
+import Footer from "@/src/components/Footer";
+import siteMetadata from "@/src/utils/siteMetaData";
 import Script from "next/script";
 
 const inter = Inter({
@@ -22,7 +22,7 @@ export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
     template: `%s | ${siteMetadata.title}`,
-    default: siteMetadata.title, // a default is required when creating a template
+    default: siteMetadata.title,
   },
   description: siteMetadata.description,
   openGraph: {
@@ -57,9 +57,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="bIAcXNOt6yIh3QD-kye1XlO0LAt81zxtUjZH2VKdFNY" />
-
+        {/* Google Site Verification */}
+        <meta
+          name="google-site-verification"
+          content="bIAcXNOt6yIh3QD-kye1XlO0LAt81zxtUjZH2VKdFNY"
+        />
       </head>
+
       <body
         className={cx(
           inter.variable,
@@ -67,13 +71,36 @@ export default function RootLayout({ children }) {
           "font-mr bg-light dark:bg-dark"
         )}
       >
-        <Script id="theme-switcher" strategy="beforeInteractive">
-          {`if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }`}
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y978GY5N80"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y978GY5N80');
+          `}
         </Script>
+
+        {/* Theme Switcher */}
+        <Script id="theme-switcher" strategy="beforeInteractive">
+          {`
+            if (
+              localStorage.getItem('theme') === 'dark' ||
+              (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+            ) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          `}
+        </Script>
+
         <Header />
         {children}
         <Footer />
