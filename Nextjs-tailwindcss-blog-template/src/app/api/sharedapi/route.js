@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 ///create  a shared api for sharing my posts with cecking blog_user_secret_key match my secret key//
-export async function POST(req) {
+export async function GET(req) {
     try{
         const body = await req.json();
         const { apiKey } = body;
