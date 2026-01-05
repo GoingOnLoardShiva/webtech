@@ -100,6 +100,7 @@ export default function RootLayout({ children }) {
             }
           `}
         </Script>
+        <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
 
         <Header />
         {children}
