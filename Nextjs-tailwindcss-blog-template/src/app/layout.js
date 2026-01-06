@@ -51,6 +51,9 @@ export const metadata = {
     title: siteMetadata.title,
     images: [siteMetadata.socialBanner],
   },
+  verification: {
+    yandex: "59eb3137f7dd091b",
+  },
 };
 
 export default function RootLayout({ children }) {
