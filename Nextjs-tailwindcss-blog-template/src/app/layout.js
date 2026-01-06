@@ -57,7 +57,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Site Verification */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NX8SDPZ4')
+            `,
+          }}
+        />
+
+
         <meta
           name="google-site-verification"
           content="bIAcXNOt6yIh3QD-kye1XlO0LAt81zxtUjZH2VKdFNY"
@@ -102,10 +116,12 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
-        
+
         <script async="async" data-cfasync="false" src="https://pl28407725.effectivegatecpm.com/1ac2e82cee1612d6a34d01b4b05400c2/invoke.js"></script>
         <div id="container-1ac2e82cee1612d6a34d01b4b05400c2"></div>
-        
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX8SDPZ4"
+          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+
         <Header />
         {children}
         <Footer />
