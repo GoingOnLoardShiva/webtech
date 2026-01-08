@@ -124,12 +124,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
           `}
         </Script>
+        {/* //adcahs// */}
+        <Script
+          id="adcash-autotag"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              aclib.runAutoTag({
+                zoneId: 'wukkylf9wu',
+              });
+            `,
+          }}
+        />
         <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
 
         <script async="async" data-cfasync="false" src="https://pl28407725.effectivegatecpm.com/1ac2e82cee1612d6a34d01b4b05400c2/invoke.js"></script>
         <div id="container-1ac2e82cee1612d6a34d01b4b05400c2"></div>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX8SDPZ4"
           height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+
 
         <Header />
         {children}
