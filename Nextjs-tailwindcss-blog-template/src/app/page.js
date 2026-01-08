@@ -6,6 +6,7 @@ import RecentPosts from "../components/Home/RecentPosts";
 import dbConnect from '@/src/lib/mongoose';
 import Post from '@/src/models/Post';
 import readingTime from 'reading-time';
+import VideoPlayer from "../components/video/VideoPlayer";
 
 function mapPostToBlog(p) {
   const image = p.image
@@ -49,6 +50,7 @@ export default async function Home() {
       <HomeCoverSection blogs={blogs} />
       <FeaturedPosts blogs={blogs} />
       <RecentPosts blogs={blogs} />
+      <VideoPlayer/>
     </main>
   );
 }

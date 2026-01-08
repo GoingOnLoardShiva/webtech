@@ -136,6 +136,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
+        
+        {/* Google IMA SDK */}
+        <Script
+          src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Video.js Ads */}
+        <Script
+          src="https://unpkg.com/videojs-contrib-ads/dist/videojs-contrib-ads.min.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Video.js IMA Plugin */}
+        <Script
+          src="https://unpkg.com/videojs-ima/dist/videojs.ima.js"
+          strategy="afterInteractive"
+        />
         <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
 
         <script async="async" data-cfasync="false" src="https://pl28407725.effectivegatecpm.com/1ac2e82cee1612d6a34d01b4b05400c2/invoke.js"></script>
