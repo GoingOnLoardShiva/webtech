@@ -60,6 +60,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* //add cash// */}
+        <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+        <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
