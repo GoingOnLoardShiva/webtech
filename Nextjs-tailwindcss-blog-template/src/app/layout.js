@@ -60,9 +60,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* //add cash// */}
-        <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-        <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
 
 
         <Script
@@ -78,14 +76,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
-        <meta name="monetag" content="63b51262a750b50b9f91c4b3ca276ce9"></meta>
 
 
         <meta
           name="google-site-verification"
           content="bIAcXNOt6yIh3QD-kye1XlO0LAt81zxtUjZH2VKdFNY"
         />
-        <script src="https://confessinvaluable.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
       </head>
 
       <body
@@ -124,42 +120,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
           `}
         </Script>
-        {/* //adcahs// */}
-        <Script
-          id="adcash-autotag"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              aclib.runAutoTag({
-                zoneId: 'wukkylf9wu',
-              });
-            `,
-          }}
-        />
-        
-        {/* Google IMA SDK */}
-        <Script
-          src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"
-          strategy="afterInteractive"
-        />
-
-        {/* Video.js Ads */}
-        <Script
-          src="https://unpkg.com/videojs-contrib-ads/dist/videojs-contrib-ads.min.js"
-          strategy="afterInteractive"
-        />
-
-        {/* Video.js IMA Plugin */}
-        <Script
-          src="https://unpkg.com/videojs-ima/dist/videojs.ima.js"
-          strategy="afterInteractive"
-        />
-        <script src="https://pl28407662.effectivegatecpm.com/17/ca/c4/17cac43918f11f42daa0cff0fdb02ff7.js"></script>
-
-        <script async="async" data-cfasync="false" src="https://pl28407725.effectivegatecpm.com/1ac2e82cee1612d6a34d01b4b05400c2/invoke.js"></script>
-        <div id="container-1ac2e82cee1612d6a34d01b4b05400c2"></div>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX8SDPZ4"
-          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
 
 
         <Header />
